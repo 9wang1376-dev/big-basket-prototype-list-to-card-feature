@@ -228,9 +228,9 @@ button:focus-visible, input:focus-visible { outline: 3px solid var(--green); out
 .s-card.show { transform: none; opacity: 1; pointer-events: auto; }
 /* list icon turns green and gives a little wiggle when the card arrives */
 .s-licon { position: absolute; left: 300px; width: 36px; height: 36px; background: #fff; z-index: 2; pointer-events: none; transition: top .5s cubic-bezier(.22, 1, .36, 1); animation: licon-in .25s ease-out .42s both; }
-.s-licon img { display: block; width: 36px; height: 36px; transform-origin: 50% 60%; animation: wiggle .7s ease-in-out .7s 2; }
+.s-licon img { display: block; width: 36px; height: 36px; transform-origin: 50% 60%; animation: wiggle 1.5s ease-in-out .7s infinite; }
 @keyframes licon-in { from { opacity: 0; } }
-@keyframes wiggle { 0%, 100% { transform: rotate(0); } 15% { transform: rotate(-14deg) scale(1.08); } 30% { transform: rotate(11deg) scale(1.08); } 45% { transform: rotate(-8deg); } 60% { transform: rotate(5deg); } 75% { transform: rotate(-2deg); } }
+@keyframes wiggle { /* a short shake, then rest; repeats every 1.5s */ 0%, 45%, 100% { transform: rotate(0); } 6% { transform: rotate(-14deg) scale(1.08); } 13% { transform: rotate(11deg) scale(1.08); } 20% { transform: rotate(-8deg); } 27% { transform: rotate(5deg); } 35% { transform: rotate(-2deg); } }
 @media (prefers-reduced-motion: reduce) { .mv, .hot, .s-card, .s-licon { transition: none; } .s-licon img { animation: none; } }
 @keyframes fadein2 { from { opacity: 0; transform: translateY(-8px); } }
 @keyframes slideup { from { transform: translateY(100%); } to { transform: none; } }
